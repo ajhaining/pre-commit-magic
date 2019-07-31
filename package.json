@@ -1,0 +1,44 @@
+{
+  "name": "pre-commit-magic",
+  "description": "Examples of what you can set up using pre-commit hooks.",
+  "license": "MIT",
+  "version": "1.0.0",
+  "author": "Andrew Haining",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.3.1",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add",
+      "jest --bail --findRelatedTests"
+    ],
+    "*.py": [
+      "black"
+    ],
+    "*.{json,md,yaml,yml}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
