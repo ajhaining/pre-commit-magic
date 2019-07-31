@@ -4,6 +4,10 @@
   "license": "MIT",
   "version": "1.0.0",
   "author": "Andrew Haining",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajhaining/pre-commit-magic.git"
+  },
   "scripts": {
     "test": "jest"
   },
